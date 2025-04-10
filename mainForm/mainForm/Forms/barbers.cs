@@ -7,26 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using mainForm.Forms;
 
-namespace mainForm
+namespace mainForm.Forms
 {
-    public partial class Form1 : Form
+    public partial class barbers : Form
     {
-        public static Panel Mainpanel;
-        public Form1()
+        public barbers()
         {
             InitializeComponent();
-            Mainpanel = panel1;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void homebutton_Click(object sender, EventArgs e)
         {
             homepage homepage = new homepage();
             homepage.Dock = DockStyle.Fill;
             homepage.TopLevel = false;
-            panel1.Controls.Clear();
-            panel1.Controls.Add(homepage);
+            Form1.Mainpanel.Controls.Clear();
+            Form1.Mainpanel.Controls.Add(homepage);
             homepage.Show();
         }
     }
