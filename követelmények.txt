@@ -1,0 +1,28 @@
+Mind
+− Form ok
+− Button ok
+− Label ok
+− TextBox
+− ComboBox
+− ListBox
+− CheckBox
+− RadioButton
+− PictureBox ok
+− Panel ok
+
+
+2
+− FlowLayoutPanel
+− TableLayoutPanel
+− GroupBox
+− SplitContainer
+− TabControl ok
+
+
+4
+− MessageBox ok?
+− Timer ok?
+− OpenFileDialog és SaveFileDialog
+− MenuStrip
+− ToolStrip
+− ColorDialog és FontDialog

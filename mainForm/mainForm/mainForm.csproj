@@ -113,5 +113,14 @@
   <ItemGroup>
     <None Include="bin\Debug\homebutton.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\img\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\img\homebutton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\img\mainFormBG.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
