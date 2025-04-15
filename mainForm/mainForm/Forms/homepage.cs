@@ -47,5 +47,6 @@ namespace mainForm.Forms
             Form1.Mainpanel.Controls.Add(barber);
             barber.Show();
         }
+
     }
 }

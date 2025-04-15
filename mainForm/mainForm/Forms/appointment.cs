@@ -16,6 +16,19 @@ namespace mainForm.Forms
         {
             InitializeComponent();
         }
+
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            newAppointment newApp = new newAppointment();
+            newApp.Dock = DockStyle.Fill;
+            newApp.TopLevel = false;
+            Form1.Mainpanel.Controls.Clear();
+            Form1.Mainpanel.Controls.Add(newApp);
+            newApp.Show();
+        }
+
         private void homebutton_Click(object sender, EventArgs e)
         {
             homepage homepage = new homepage();
@@ -25,6 +38,5 @@ namespace mainForm.Forms
             Form1.Mainpanel.Controls.Add(homepage);
             homepage.Show();
         }
-
     }
 }

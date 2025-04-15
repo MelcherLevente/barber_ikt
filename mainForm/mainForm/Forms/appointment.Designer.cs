@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.homebutton = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -62,6 +60,7 @@
             this.homebutton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.homebutton.TabIndex = 2;
             this.homebutton.TabStop = false;
+            this.homebutton.Click += new System.EventHandler(this.homebutton_Click);
             // 
             // label2
             // 
@@ -77,12 +76,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(204, 271);
+            this.button1.Location = new System.Drawing.Point(174, 294);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(113, 23);
             this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
+            this.button1.Text = "newAppointment";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -96,7 +96,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(201, 252);
+            this.label1.Location = new System.Drawing.Point(183, 252);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 13);
             this.label1.TabIndex = 6;
@@ -135,7 +135,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox homebutton;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;

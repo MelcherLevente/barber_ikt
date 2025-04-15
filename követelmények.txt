@@ -11,11 +11,11 @@ Mind
 − Panel ok
 
 
-2
+2 OK
 − FlowLayoutPanel
 − TableLayoutPanel
 − GroupBox
-− SplitContainer
+− SplitContainer ok
 − TabControl ok
 
 

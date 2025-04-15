@@ -33,16 +33,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Arial", 20F);
             this.button4.Location = new System.Drawing.Point(383, 381);
             this.button4.Margin = new System.Windows.Forms.Padding(0);
@@ -56,6 +57,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Arial", 20F);
             this.button3.Location = new System.Drawing.Point(78, 381);
             this.button3.Margin = new System.Windows.Forms.Padding(0);
@@ -103,9 +105,23 @@
             this.panel2.Size = new System.Drawing.Size(934, 100);
             this.panel2.TabIndex = 5;
             // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Font = new System.Drawing.Font("Arial", 30F);
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(0);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
+            this.label1.Size = new System.Drawing.Size(379, 100);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Barberszalon";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Arial", 15F);
             this.button2.Location = new System.Drawing.Point(725, 28);
             this.button2.Name = "button2";
@@ -117,6 +133,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial", 15F);
             this.button1.Location = new System.Drawing.Point(538, 28);
             this.button1.Name = "button1";
@@ -133,19 +150,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(934, 445);
             this.panel3.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Font = new System.Drawing.Font("Arial", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(0);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(50, 0, 0, 0);
-            this.label1.Size = new System.Drawing.Size(296, 100);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Barberszalon";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // homepage
             // 
