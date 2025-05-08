@@ -53,7 +53,6 @@
             // homebutton
             // 
             this.homebutton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.homebutton.Image = global::mainForm.Properties.Resources.homebutton;
             this.homebutton.Location = new System.Drawing.Point(38, 25);
             this.homebutton.Name = "homebutton";
             this.homebutton.Size = new System.Drawing.Size(50, 50);
