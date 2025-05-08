@@ -3,7 +3,7 @@ Mind
 − Button ok
 − Label ok
 − TextBox
-− ComboBox
+− ComboBox ok?
 − ListBox
 − CheckBox
 − RadioButton
