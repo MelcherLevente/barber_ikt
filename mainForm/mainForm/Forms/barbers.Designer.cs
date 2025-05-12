@@ -36,6 +36,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
@@ -49,7 +50,6 @@
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.homebutton)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -152,18 +152,32 @@
             this.splitContainer1.Panel2.Controls.Add(this.button1);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Size = new System.Drawing.Size(724, 325);
-            this.splitContainer1.SplitterDistance = 329;
+            this.splitContainer1.SplitterDistance = 328;
             this.splitContainer1.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::mainForm.Properties.Resources._default;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(329, 325);
+            this.pictureBox1.Size = new System.Drawing.Size(328, 325);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Green;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 20F);
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(88, 267);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(213, 41);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "FOGLALÁS";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -199,15 +213,16 @@
             // 
             this.splitContainer2.Panel2.Controls.Add(this.label3);
             this.splitContainer2.Size = new System.Drawing.Size(724, 325);
-            this.splitContainer2.SplitterDistance = 329;
+            this.splitContainer2.SplitterDistance = 328;
             this.splitContainer2.TabIndex = 1;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Image = global::mainForm.Properties.Resources._default;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(329, 325);
+            this.pictureBox2.Size = new System.Drawing.Size(328, 325);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -246,15 +261,16 @@
             // 
             this.splitContainer3.Panel2.Controls.Add(this.label4);
             this.splitContainer3.Size = new System.Drawing.Size(724, 325);
-            this.splitContainer3.SplitterDistance = 329;
+            this.splitContainer3.SplitterDistance = 328;
             this.splitContainer3.TabIndex = 1;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox3.Image = global::mainForm.Properties.Resources._default;
             this.pictureBox3.Location = new System.Drawing.Point(0, 0);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(329, 325);
+            this.pictureBox3.Size = new System.Drawing.Size(328, 325);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
@@ -299,6 +315,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox4.Image = global::mainForm.Properties.Resources._default;
             this.pictureBox4.Location = new System.Drawing.Point(0, 0);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(328, 325);
@@ -314,19 +331,6 @@
             this.label5.Size = new System.Drawing.Size(79, 13);
             this.label5.TabIndex = 0;
             this.label5.Text = "borbely4 adatai";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Green;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial", 20F);
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(88, 267);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(213, 41);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "FOGLALÁS";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // barbers
             // 

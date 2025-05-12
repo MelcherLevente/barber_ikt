@@ -17,7 +17,9 @@ namespace mainForm.Forms
             InitializeComponent();
             barbersStyles barber1 = new barbersStyles("barber1", true, 10, true, 5);
             barbersStyles barber2 = new barbersStyles("barber2", true, 7);
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
 
+            
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -48,25 +50,73 @@ namespace mainForm.Forms
 
         private void newAppointment_Load(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedText == "Hosszúhaj")
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string barber = "";
+            listBox1.Items.Clear();
+            if (radioButton1.Checked) 
             {
-                label1.Text = "Ár : 5000Ft";
+                barber = radioButton1.Text;
             }
-            else if (comboBox1.SelectedText == "Rövidhaj")
+            else if (radioButton2.Checked)
             {
-                label1.Text = "Ár : 3500Ft";
+                barber = radioButton2.Text;
+            }
+            else if (radioButton3.Checked)
+            {
+                barber = radioButton3.Text;
+            }
+            else if (radioButton4.Checked)
+            {
+                barber = radioButton4.Text;
+            }
+            else
+            {
+                MessageBox.Show("Nem választottál borbélyt");
+            }
+
+            if (comboBox1.Text != "" && barber != "")
+            {
+                listBox1.Items.Add($"Borbély: " + barber);
+                listBox1.Items.Add("Hajhossz: " + comboBox1.Text);
+            }
+            else
+            {
+                MessageBox.Show("Nem választottál hajhosszt");
+            }
+            if (listBox1.Items.Count == 2)
+            {
+                if (checkBox1.Checked) 
+                {
+                    listBox1.Items.Add("Szakáll: igen");
+                }
+                else
+                {
+                    listBox1.Items.Add("Szakáll: nem");
+                }
+
+                listBox1.Items.Add(dateTimePicker1.Value.ToShortDateString());
+                listBox1.Items.Add(dateTimePicker2.Value.Hour + ":" + dateTimePicker2.Value.Minute);
             }
         }
 
-        private void comboBox1_TextUpdate(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedText == "Hosszúhaj")
+            if (listBox1.Items.Count == 5)
             {
-                label1.Text = "Ár : 5000Ft";
+                confirm ok = new confirm();
+                ok.Dock = DockStyle.Fill;
+                ok.TopLevel = false;
+                Form1.Mainpanel.Controls.Clear();
+                Form1.Mainpanel.Controls.Add(ok);
+                ok.Show();
             }
-            else if (comboBox1.SelectedText == "Rövidhaj")
+            else
             {
-                label1.Text = "Ár : 3500Ft";
+                MessageBox.Show("Hiba");
             }
         }
     }

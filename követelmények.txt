@@ -3,10 +3,10 @@ Mind
 − Button ok
 − Label ok
 − TextBox
-− ComboBox ok?
+− ComboBox ok
 − ListBox
-− CheckBox
-− RadioButton
+− CheckBox ok
+− RadioButton ok
 − PictureBox ok
 − Panel ok
 

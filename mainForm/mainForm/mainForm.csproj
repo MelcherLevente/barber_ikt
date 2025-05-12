@@ -65,6 +65,12 @@
       <DependentUpon>barbers.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\barbersStyles.cs" />
+    <Compile Include="Forms\confirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\confirm.Designer.cs">
+      <DependentUpon>confirm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\homepage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\barbers.resx">
       <DependentUpon>barbers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\confirm.resx">
+      <DependentUpon>confirm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\homepage.resx">
       <DependentUpon>homepage.cs</DependentUpon>
@@ -125,6 +134,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\img\mainFormBG.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\default.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\homebutton.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
