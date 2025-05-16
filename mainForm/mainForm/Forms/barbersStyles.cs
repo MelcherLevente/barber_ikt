@@ -6,30 +6,38 @@ using System.Threading.Tasks;
 
 namespace mainForm.Forms
 {
-    internal class barbersStyles
+    public class barbersStyles
     {
-        public string name;
-        public bool hairstyleLong;
-        public bool hairstyleShort;
-        public int priceLong;
-        public int priceShort;
+        private string name;
+        private bool hairstyleLong;
+        private bool hairstyleShort;
+        private int priceLong;
+        private int priceShort;
+
+        public string Name { get => name; set => name = value; }
+        public bool HairstyleLong { get => hairstyleLong; set => hairstyleLong = value; }
+        public bool HairstyleShort { get => hairstyleShort; set => hairstyleShort = value; }
+        public int PriceLong { get => priceLong; set => priceLong = value; }
+        public int PriceShort { get => priceShort; set => priceShort = value; }
 
         public barbersStyles(string name, bool hairstyleLong, int priceLong, bool hairstyleShort, int priceShort)
         {
-            this.name = name;
-            this.hairstyleLong = hairstyleLong;
-            this.priceLong = priceLong;
-            this.hairstyleShort = hairstyleShort;
-            this.priceShort = priceShort;
+            this.Name = name;
+            this.HairstyleLong = hairstyleLong;
+            this.PriceLong = priceLong;
+            this.HairstyleShort = hairstyleShort;
+            this.PriceShort = priceShort;
         }
 
         public barbersStyles(string name, bool hairstyleShort, int priceShort)
         {
-            this.name = name;
-            this.hairstyleLong = false;
-            this.priceLong = 0;
-            this.hairstyleShort = hairstyleShort;
-            this.priceShort = priceShort;
+            this.Name = name;
+            this.HairstyleLong = false;
+            this.PriceLong = 0;
+            this.HairstyleShort = hairstyleShort;
+            this.PriceShort = priceShort;
         }
+
+
     }
 }

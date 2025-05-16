@@ -13,7 +13,7 @@ namespace mainForm.Forms
 {
     public partial class barbers : Form
     {
-        
+        //public barbersStyles barber1 = new barbersStyles("barber1", );
         public barbers()
         {
             InitializeComponent();
@@ -29,5 +29,9 @@ namespace mainForm.Forms
             homepage.Show();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

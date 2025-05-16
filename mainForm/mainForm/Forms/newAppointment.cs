@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,45 +13,13 @@ namespace mainForm.Forms
 {
     public partial class newAppointment : Form
     {
+        barbersStyles barber1 = new barbersStyles("barber1", true, 10, true, 5);
+        barbersStyles barber2 = new barbersStyles("barber2", true, 7);
         public newAppointment()
         {
             InitializeComponent();
-            barbersStyles barber1 = new barbersStyles("barber1", true, 10, true, 5);
-            barbersStyles barber2 = new barbersStyles("barber2", true, 7);
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-
-            
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            comboBox1.Items.Clear();
-            comboBox1.Items.Add("Hosszúhaj");
-            comboBox1.Items.Add("Rövidhaj");
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            comboBox1.Items.Clear();
-            comboBox1.Items.Add("Rövidhaj");
-        }
-
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
-        {
-            comboBox1.Items.Clear();
-            comboBox1.Items.Add("Rövidhaj");
-        }
-
-        private void radioButton4_CheckedChanged(object sender, EventArgs e)
-        {
-            comboBox1.Items.Clear();
-            comboBox1.Items.Add("Hosszúhaj");
-            comboBox1.Items.Add("Rövidhaj");
-        }
-
-        private void newAppointment_Load(object sender, EventArgs e)
-        {
-            
+            comboBox1.Items.Add("Hosszú");
+            comboBox1.Items.Add("Rövid");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -97,15 +66,13 @@ namespace mainForm.Forms
                 {
                     listBox1.Items.Add("Szakáll: nem");
                 }
-
-                listBox1.Items.Add(dateTimePicker1.Value.ToShortDateString());
-                listBox1.Items.Add(dateTimePicker2.Value.Hour + ":" + dateTimePicker2.Value.Minute);
+                listBox1.Items.Add(dateTimePicker2.Value);
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (listBox1.Items.Count == 5)
+            if (listBox1.Items.Count == 4)
             {
                 confirm ok = new confirm();
                 ok.Dock = DockStyle.Fill;

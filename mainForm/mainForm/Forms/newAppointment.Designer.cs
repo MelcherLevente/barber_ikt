@@ -38,7 +38,6 @@
             this.homebutton = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
@@ -52,7 +51,7 @@
             // 
             this.comboBox1.Font = new System.Drawing.Font("Arial", 20F);
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(298, 180);
+            this.comboBox1.Location = new System.Drawing.Point(300, 204);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(200, 40);
             this.comboBox1.TabIndex = 3;
@@ -67,7 +66,6 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "barber1";
             this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // flowLayoutPanel1
             // 
@@ -77,7 +75,7 @@
             this.flowLayoutPanel1.Controls.Add(this.radioButton4);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Font = new System.Drawing.Font("Arial", 20F);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(89, 225);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(92, 216);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(144, 178);
             this.flowLayoutPanel1.TabIndex = 6;
@@ -91,7 +89,6 @@
             this.radioButton2.TabIndex = 6;
             this.radioButton2.Text = "barber2";
             this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // radioButton3
             // 
@@ -102,7 +99,6 @@
             this.radioButton3.TabIndex = 7;
             this.radioButton3.Text = "barber3";
             this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
             // radioButton4
             // 
@@ -113,7 +109,6 @@
             this.radioButton4.TabIndex = 8;
             this.radioButton4.Text = "barber4";
             this.radioButton4.UseVisualStyleBackColor = true;
-            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
             // 
             // panel1
             // 
@@ -153,23 +148,12 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Arial", 20F);
-            this.checkBox1.Location = new System.Drawing.Point(298, 225);
+            this.checkBox1.Location = new System.Drawing.Point(300, 249);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(120, 36);
             this.checkBox1.TabIndex = 9;
             this.checkBox1.Text = "Szakáll";
             this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 20F);
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(298, 266);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2026, 12, 31, 0, 0, 0, 0);
-            this.dateTimePicker1.MinDate = new System.DateTime(2025, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 38);
-            this.dateTimePicker1.TabIndex = 10;
             // 
             // listBox1
             // 
@@ -183,11 +167,11 @@
             // 
             this.dateTimePicker2.Font = new System.Drawing.Font("Arial", 20F);
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePicker2.Location = new System.Drawing.Point(359, 323);
+            this.dateTimePicker2.Location = new System.Drawing.Point(350, 294);
             this.dateTimePicker2.MaxDate = new System.DateTime(2026, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker2.MinDate = new System.DateTime(2025, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(139, 38);
+            this.dateTimePicker2.Size = new System.Drawing.Size(150, 38);
             this.dateTimePicker2.TabIndex = 12;
             // 
             // button1
@@ -195,7 +179,7 @@
             this.button1.BackColor = System.Drawing.Color.Green;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial", 20F);
-            this.button1.Location = new System.Drawing.Point(298, 383);
+            this.button1.Location = new System.Drawing.Point(300, 363);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(215, 45);
             this.button1.TabIndex = 13;
@@ -227,7 +211,6 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -237,7 +220,6 @@
             this.Name = "newAppointment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "newAppointment";
-            this.Load += new System.EventHandler(this.newAppointment_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -258,7 +240,6 @@
         private System.Windows.Forms.PictureBox homebutton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Button button1;

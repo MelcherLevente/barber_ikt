@@ -4,7 +4,7 @@ Mind
 − Label ok
 − TextBox
 − ComboBox ok
-− ListBox
+− ListBox ok
 − CheckBox ok
 − RadioButton ok
 − PictureBox ok
