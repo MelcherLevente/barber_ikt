@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -9,12 +10,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using MySql.Data.MySqlClient;
+
+
 namespace mainForm.Forms
 {
     public partial class newAppointment : Form
     {
-        barbersStyles barber1 = new barbersStyles("barber1", true, 10, true, 5);
-        barbersStyles barber2 = new barbersStyles("barber2", true, 7);
+        public static string connStr = "server=localhost;user=root;database=barbershop;port=3306;password=''";
+        public static MySqlConnection conn = new MySqlConnection(connStr);
         public newAppointment()
         {
             InitializeComponent();

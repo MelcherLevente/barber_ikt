@@ -20,9 +20,13 @@ Mind
 
 
 4
-− MessageBox ok?
+− MessageBox ok
 − Timer ok?
 − OpenFileDialog és SaveFileDialog
 − MenuStrip
 − ToolStrip
 − ColorDialog és FontDialog
+
+ab osszekot -> megerosites gombra insert ab-ba
+login form
+kit valasszak form
