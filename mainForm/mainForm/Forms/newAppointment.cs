@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using MySql.Data;
 using MySql.Data.MySqlClient;
 
 
@@ -17,8 +18,7 @@ namespace mainForm.Forms
 {
     public partial class newAppointment : Form
     {
-        public static string connStr = "server=localhost;user=root;database=barbershop;port=3306;password=''";
-        public static MySqlConnection conn = new MySqlConnection(connStr);
+        public string barber = "";
         public newAppointment()
         {
             InitializeComponent();
@@ -28,7 +28,7 @@ namespace mainForm.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string barber = "";
+            
             listBox1.Items.Clear();
             if (radioButton1.Checked) 
             {
@@ -74,8 +74,45 @@ namespace mainForm.Forms
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        public void button2_Click(object sender, EventArgs e)
         {
+        string connStr = "server=localhost;user=root;database=barbershop;password=''";
+        MySqlConnection conn = new MySqlConnection(connStr);
+            try
+            {
+                conn.Open();
+                MessageBox.Show("Connecting to MySQL...");
+                
+                string barberID = $"SELECT `id` FROM `barbers` WHERE `name` LIKE '{barber}'";
+                MySqlCommand cmdBarber = new MySqlCommand(barberID, conn);
+                MySqlDataReader rdr = cmdBarber.ExecuteReader();
+
+                string hairstyle = comboBox1.SelectedText;
+                while (rdr.Read())
+                {
+                    MessageBox.Show($"{rdr[0]}");
+                }
+                rdr.Close();
+                
+                bool beard = false;
+                if (checkBox1.Checked)
+                {
+                    beard = true;
+                }
+
+                string sql = $"INSERT INTO appointments (barberID, hairstyle, beard, date) VALUES ({rdr[0]},'{hairstyle}', '{beard}', '{dateTimePicker2.Value}')";
+                MySqlCommand cmdInsert = new MySqlCommand(sql, conn);
+                cmdInsert.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            conn.Close();
+            MessageBox.Show("Done.");
+
+
             if (listBox1.Items.Count == 4)
             {
                 confirm ok = new confirm();
@@ -89,6 +126,16 @@ namespace mainForm.Forms
             {
                 MessageBox.Show("Hiba");
             }
+        }
+
+        private void homebutton_Click(object sender, EventArgs e)
+        {
+            homepage homepage = new homepage();
+            homepage.Dock = DockStyle.Fill;
+            homepage.TopLevel = false;
+            Form1.Mainpanel.Controls.Clear();
+            Form1.Mainpanel.Controls.Add(homepage);
+            homepage.Show();
         }
     }
 }

@@ -38,5 +38,15 @@ namespace mainForm.Forms
             Form1.Mainpanel.Controls.Add(homepage);
             homepage.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            barbers barber = new barbers();
+            barber.Dock = DockStyle.Fill;
+            barber.TopLevel = false;
+            Form1.Mainpanel.Controls.Clear();
+            Form1.Mainpanel.Controls.Add(barber);
+            barber.Show();
+        }
     }
 }

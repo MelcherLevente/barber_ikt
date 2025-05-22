@@ -131,6 +131,7 @@
             this.homebutton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.homebutton.TabIndex = 2;
             this.homebutton.TabStop = false;
+            this.homebutton.Click += new System.EventHandler(this.homebutton_Click);
             // 
             // label2
             // 
