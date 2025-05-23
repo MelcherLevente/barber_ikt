@@ -31,7 +31,42 @@ namespace mainForm.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
+            newAppointment newApp = new newAppointment();
+            newApp.Dock = DockStyle.Fill;
+            newApp.TopLevel = false;
+            Form1.Mainpanel.Controls.Clear();
+            Form1.Mainpanel.Controls.Add(newApp);
+            newApp.Show();
+        }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            newAppointment newApp = new newAppointment();
+            newApp.Dock = DockStyle.Fill;
+            newApp.TopLevel = false;
+            Form1.Mainpanel.Controls.Clear();
+            Form1.Mainpanel.Controls.Add(newApp);
+            newApp.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            newAppointment newApp = new newAppointment();
+            newApp.Dock = DockStyle.Fill;
+            newApp.TopLevel = false;
+            Form1.Mainpanel.Controls.Clear();
+            Form1.Mainpanel.Controls.Add(newApp);
+            newApp.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            newAppointment newApp = new newAppointment();
+            newApp.Dock = DockStyle.Fill;
+            newApp.TopLevel = false;
+            Form1.Mainpanel.Controls.Clear();
+            Form1.Mainpanel.Controls.Add(newApp);
+            newApp.Show();
         }
     }
 }
