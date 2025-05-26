@@ -59,28 +59,37 @@ namespace mainForm.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string connStr = "server=localhost;user=root;database=barbershop;port=3306;password=''";
+            string connStr = "server=localhost;user=root;database=barbershop;password=''";
             MySqlConnection conn = new MySqlConnection(connStr);
             string name = textBox2.Text;
-            string tel = textBox3.Text;
-            try
+            string tel = textBox1.Text;
+            string msg = textBox3.Text;
+            if (name != "" && tel != "")
             {
-                MessageBox.Show("Connecting to MySQL...");
-                conn.Open();
-                //sql parancs – visszatérési érték nincs!!!
-                string sql = $"INSERT INTO guests (name, tel) VALUES ('{name}','{tel})";
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-                //parancs végrehajtása
-                cmd.ExecuteNonQuery();
+                try
+                {
+                    MessageBox.Show("Connecting to MySQL...");
+                    conn.Open();
+                    //sql parancs – visszatérési érték nincs!!!
+                    string guestInsert = $"INSERT INTO guests (name, tel) VALUES ('{name}','{tel}'";
+                    MySqlCommand cmd = new MySqlCommand(guestInsert, conn);
+
+                    //string appInsert = $"INSERT INTO appointments(guestID, uzenet) VALUES ('')";
+                    //parancs végrehajtása
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+
+                conn.Close();
+                MessageBox.Show("Done.");
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Hiba");
             }
-
-            conn.Close();
-            MessageBox.Show("Done.");
-
         }
     }
 }

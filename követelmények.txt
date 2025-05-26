@@ -1,8 +1,8 @@
-Mind
+Mind OK
 − Form ok
 − Button ok
 − Label ok
-− TextBox
+− TextBox ok
 − ComboBox ok
 − ListBox ok
 − CheckBox ok
@@ -21,7 +21,7 @@ Mind
 
 4
 − MessageBox ok
-− Timer ok?
+− Timer ok
 − OpenFileDialog és SaveFileDialog
 − MenuStrip
 − ToolStrip

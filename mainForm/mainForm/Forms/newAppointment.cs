@@ -78,54 +78,55 @@ namespace mainForm.Forms
         {
         string connStr = "server=localhost;user=root;database=barbershop;password=''";
         MySqlConnection conn = new MySqlConnection(connStr);
-            try
-            {
-                conn.Open();
-                MessageBox.Show("Connecting to MySQL...");
-                
-                string barberID = $"SELECT `id` FROM `barbers` WHERE `name` LIKE '{barber}'";
-                MySqlCommand cmdBarber = new MySqlCommand(barberID, conn);
-                MySqlDataReader rdr = cmdBarber.ExecuteReader();
 
-                string hairstyle = comboBox1.SelectedText;
-                while (rdr.Read())
+        if (listBox1.Items.Count == 4)
+        {
+                try
                 {
-                    MessageBox.Show($"{rdr[0]}");
+                    conn.Open();
+                    MessageBox.Show("Connecting to MySQL...");
+
+                    string barberID = $"SELECT `id` FROM `barbers` WHERE `name` LIKE '{barber}'";
+                    MySqlCommand cmdBarber = new MySqlCommand(barberID, conn);
+                    MySqlDataReader rdr = cmdBarber.ExecuteReader();
+
+                    string hairstyle = Convert.ToString(comboBox1.SelectedItem);
+                    while (rdr.Read())
+                    {
+                        MessageBox.Show($"{rdr[0]}");
+                    }
+                    
+
+                    int beard = 0;
+                    if (checkBox1.Checked)
+                    {
+                        beard = 1;
+                    }
+
+                    string sql = $"INSERT INTO appointments (barberID, hairstyle, beard, date) VALUES ({rdr[0]},'{hairstyle}', '{beard}', '{dateTimePicker2.Value}')";
+                    MySqlCommand cmdInsert = new MySqlCommand(sql, conn);
+                    rdr.Close();
+                    cmdInsert.ExecuteNonQuery();
                 }
-                rdr.Close();
-                
-                bool beard = false;
-                if (checkBox1.Checked)
+                catch (Exception ex)
                 {
-                    beard = true;
+                    MessageBox.Show(ex.ToString());
                 }
 
-                string sql = $"INSERT INTO appointments (barberID, hairstyle, beard, date) VALUES ({rdr[0]},'{hairstyle}', '{beard}', '{dateTimePicker2.Value}')";
-                MySqlCommand cmdInsert = new MySqlCommand(sql, conn);
-                cmdInsert.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-
-            conn.Close();
-            MessageBox.Show("Done.");
-
-
-            if (listBox1.Items.Count == 4)
-            {
+                conn.Close();
+                MessageBox.Show("Done.");
                 confirm ok = new confirm();
-                ok.Dock = DockStyle.Fill;
-                ok.TopLevel = false;
-                Form1.Mainpanel.Controls.Clear();
-                Form1.Mainpanel.Controls.Add(ok);
-                ok.Show();
-            }
-            else
-            {
-                MessageBox.Show("Hiba");
-            }
+
+            ok.Dock = DockStyle.Fill;
+            ok.TopLevel = false;
+            Form1.Mainpanel.Controls.Clear();
+            Form1.Mainpanel.Controls.Add(ok);
+            ok.Show();
+        }
+        else
+        {
+            MessageBox.Show("Hiba");
+        }
         }
 
         private void homebutton_Click(object sender, EventArgs e)
