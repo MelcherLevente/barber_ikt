@@ -84,8 +84,6 @@ namespace mainForm.Forms
                 try
                 {
                     conn.Open();
-                    MessageBox.Show("Connecting to MySQL...");
-
                     string barberID = $"SELECT `id` FROM `barbers` WHERE `name` LIKE '{barber}'";
                     MySqlCommand cmdBarber = new MySqlCommand(barberID, conn);
                     MySqlDataReader rdr = cmdBarber.ExecuteReader();
@@ -114,7 +112,6 @@ namespace mainForm.Forms
                 }
 
                 conn.Close();
-                MessageBox.Show("Done.");
                 confirm ok = new confirm();
 
             ok.Dock = DockStyle.Fill;

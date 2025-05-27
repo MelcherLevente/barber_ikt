@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Google.Protobuf.WellKnownTypes;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
@@ -71,18 +71,30 @@ namespace mainForm.Forms
                     MessageBox.Show("Connecting to MySQL...");
                     conn.Open();
                     //sql parancs – visszatérési érték nincs!!!
-                    string guestInsert = $"INSERT INTO guests (name, tel) VALUES ('{name}','{tel}'";
-                    MySqlCommand cmd = new MySqlCommand(guestInsert, conn);
+                    string guestInsert = $"INSERT INTO guests (name, tel) VALUES ('{name}', '{tel}')";
+                    MySqlCommand cmdGInsert = new MySqlCommand(guestInsert, conn);
+                    cmdGInsert.ExecuteNonQuery();
 
-                    //string appInsert = $"INSERT INTO appointments(guestID, uzenet) VALUES ('')";
-                    //parancs végrehajtása
-                    cmd.ExecuteNonQuery();
+                    string guestSelect = $"SELECT MAX(id) FROM guests";
+                    MySqlCommand cmdSelect = new MySqlCommand(guestSelect, conn);
+                    MySqlDataReader rdr = cmdSelect.ExecuteReader();
+                    while (rdr.Read())
+                    {
+                        MessageBox.Show($"{rdr[0]}");
+                    }
+                    string appInsert = $"UPDATE `appointments` SET `guestID`='{rdr[0]}', `uzenet`='{msg}' WHERE MAX(id)";
+                    
+                    MySqlCommand cmdAInsert = new MySqlCommand(appInsert, conn);
+                    rdr.Close();
+                    cmdAInsert.ExecuteNonQuery();
+                    
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
                 }
 
+                
                 conn.Close();
                 MessageBox.Show("Done.");
             }
