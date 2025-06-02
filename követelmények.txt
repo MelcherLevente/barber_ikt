@@ -26,7 +26,3 @@ Mind OK
 − MenuStrip
 − ToolStrip
 − ColorDialog és FontDialog
-
-ab osszekot -> megerosites gombra insert ab-ba
-login form
-kit valasszak form
