@@ -91,7 +91,7 @@ namespace mainForm.Forms
                     string hairstyle = Convert.ToString(comboBox1.SelectedItem);
                     while (rdr.Read())
                     {
-                        MessageBox.Show($"{rdr[0]}");
+                        //MessageBox.Show($"{rdr[0]}");
                     }
                     
 
