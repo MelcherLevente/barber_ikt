@@ -68,5 +68,6 @@ namespace mainForm.Forms
             Form1.Mainpanel.Controls.Add(newApp);
             newApp.Show();
         }
+
     }
 }

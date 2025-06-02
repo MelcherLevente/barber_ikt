@@ -299,9 +299,9 @@
             this.label2.Font = new System.Drawing.Font("Arial", 20F);
             this.label2.Location = new System.Drawing.Point(85, 60);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 32);
+            this.label2.Size = new System.Drawing.Size(107, 32);
             this.label2.TabIndex = 0;
-            this.label2.Text = "NÉV";
+            this.label2.Text = "barber1";
             // 
             // tabPage2
             // 
@@ -415,9 +415,9 @@
             this.label7.Font = new System.Drawing.Font("Arial", 20F);
             this.label7.Location = new System.Drawing.Point(85, 60);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 32);
+            this.label7.Size = new System.Drawing.Size(107, 32);
             this.label7.TabIndex = 3;
-            this.label7.Text = "NÉV";
+            this.label7.Text = "barber2";
             // 
             // button2
             // 
@@ -545,9 +545,9 @@
             this.label8.Font = new System.Drawing.Font("Arial", 20F);
             this.label8.Location = new System.Drawing.Point(85, 60);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(68, 32);
+            this.label8.Size = new System.Drawing.Size(107, 32);
             this.label8.TabIndex = 4;
-            this.label8.Text = "NÉV";
+            this.label8.Text = "barber3";
             // 
             // button3
             // 
@@ -675,9 +675,9 @@
             this.label9.Font = new System.Drawing.Font("Arial", 20F);
             this.label9.Location = new System.Drawing.Point(85, 60);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(68, 32);
+            this.label9.Size = new System.Drawing.Size(107, 32);
             this.label9.TabIndex = 4;
-            this.label9.Text = "NÉV";
+            this.label9.Text = "barber4";
             // 
             // button4
             // 

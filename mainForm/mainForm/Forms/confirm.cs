@@ -68,35 +68,70 @@ namespace mainForm.Forms
             {
                 try
                 {
-                    MessageBox.Show("Connecting to MySQL...");
                     conn.Open();
                     //sql parancs – visszatérési érték nincs!!!
-                    string guestInsert = $"INSERT INTO guests (name, tel) VALUES ('{name}', '{tel}')";
-                    MySqlCommand cmdGInsert = new MySqlCommand(guestInsert, conn);
-                    cmdGInsert.ExecuteNonQuery();
-
-                    string guestSelect = $"SELECT MAX(id) FROM guests";
-                    MySqlCommand cmdSelect = new MySqlCommand(guestSelect, conn);
-                    MySqlDataReader rdr = cmdSelect.ExecuteReader();
-                    while (rdr.Read())
+                    string guestCount = $"SELECT count(*) FROM `guests` WHERE name='{name}' and tel={tel}";
+                    MySqlCommand Count = new MySqlCommand(guestCount, conn);
+                    int result = Convert.ToInt32(Count.ExecuteScalar());
+                    
+                    if (result == 0)
                     {
-                        MessageBox.Show($"{rdr[0]}");
+                        string newGuestInsert = $"INSERT INTO guests (name, tel) VALUES ('{name}', {tel})";
+                        MySqlCommand cmdNGInsert = new MySqlCommand(newGuestInsert, conn);
+                        cmdNGInsert.ExecuteNonQuery();
+
+                        string newGuest = $"SELECT MAX(id) FROM guests";
+                        MySqlCommand newGuestSelect = new MySqlCommand(newGuest, conn);
+                        MySqlDataReader rdr1 = newGuestSelect.ExecuteReader();
+                        while (rdr1.Read())
+                        {
+                            //MessageBox.Show($"{rdr1[0]}");
+                        }
+                        string newAppInsert = $"UPDATE `appointments` SET `guestID`={rdr1[0]}, `uzenet`='{msg}' WHERE id=(SELECT MAX(id) FROM appointments);"; //TALAN JO
+                        rdr1.Close();
+                        MySqlCommand cmdNGUpdate = new MySqlCommand(newAppInsert, conn);
+                        cmdNGUpdate.ExecuteNonQuery();
+                        MessageBox.Show("Sikeres foglalás");
+
+                        homepage homepage = new homepage();
+                        homepage.Dock = DockStyle.Fill;
+                        homepage.TopLevel = false;
+                        Form1.Mainpanel.Controls.Clear();
+                        Form1.Mainpanel.Controls.Add(homepage);
+                        homepage.Show();
                     }
-                    string appInsert = $"UPDATE `appointments` SET `guestID`='{rdr[0]}', `uzenet`='{msg}' WHERE MAX(id)";
-                    
-                    MySqlCommand cmdAInsert = new MySqlCommand(appInsert, conn);
-                    rdr.Close();
-                    cmdAInsert.ExecuteNonQuery();
-                    
+                    else if (result == 1)
+                    {
+                        string oldGuest = $"SELECT id FROM guests WHERE name='{name}' and tel={tel}";
+                        MySqlCommand oldGuestSelect = new MySqlCommand(oldGuest, conn);
+                        MySqlDataReader rdr2 = oldGuestSelect.ExecuteReader();
+                        while (rdr2.Read())
+                        {
+                            //MessageBox.Show($"{rdr2[0]}");
+                        }
+                        string oldAppInsert = $"UPDATE `appointments` SET `guestID`={rdr2[0]}, `uzenet`='{msg}' WHERE id=(SELECT MAX(id) FROM appointments);"; //COMMIT
+                        rdr2.Close();
+                        MySqlCommand cmdOGUpdate = new MySqlCommand(oldAppInsert, conn);
+                        cmdOGUpdate.ExecuteNonQuery();
+                        MessageBox.Show("Sikeres foglalás");
+
+                        homepage homepage = new homepage();
+                        homepage.Dock = DockStyle.Fill;
+                        homepage.TopLevel = false;
+                        Form1.Mainpanel.Controls.Clear();
+                        Form1.Mainpanel.Controls.Add(homepage);
+                        homepage.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hiba");
+                    }
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
                 }
-
-                
                 conn.Close();
-                MessageBox.Show("Done.");
             }
             else
             {
